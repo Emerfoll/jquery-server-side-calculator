@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Server Side Calculator</title>
+        <script src="vendors/jquery-3.5.1.min.js"></script>
+        <script src="scripts/client.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+       
+        <h1>Server Side Calculator</h1>
+
+        <div>
+            <input id="input1" type="text" placeholder="Number">
+            <button id="addition">+</button>
+            <button id="subtraction">-</button>
+            <button id="multiply">*</button>
+            <button id="divide">/</button>
+            <input id="input2" type="text" placeholder="Number">
+        </div>
+
+        <div id="result">
+            <h3>Answer: <span id="answer">-</span> </h3>
+        </div>
+
+        <div id="history">
+            <h3>Previous Calculations:</h3>
+                <ul id="oldInputs"></ul>
+                <li>1 + 2 = 3</li>
+                <li>5 * 5 = 25</li>
+        </div>
+        
+      
+    </body>
+</html>
