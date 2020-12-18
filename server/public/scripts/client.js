@@ -22,22 +22,38 @@ let calculation = {
 console.log(calculation);
 
 
+//----- Operator selection --------------
 function add() {
     console.log('Add');
+    calculation.operator = '+'
+    console.log(calculation);
     
 }
 function subtract() {
-    console.log('subtract');
-    
+    console.log('subtract');    
+    calculation.operator = '-'
+    console.log(calculation);
 }
 function multiply() {
     console.log('multiply');
-    
+    calculation.operator = '*'
+    console.log(calculation);
 }
 function divide() {
     console.log('divide');
+    calculation.operator = '/'
+    console.log(calculation);
 }
+
+//----- End Operator selection -----------
+
+
+
 function submit() {
     console.log('submit');
-    
+    let firstInput = $('#input1').val();
+    calculation.firstNumber = Number(firstInput);
+    let secondInput = $('#input2').val();
+    calculation.secondNumber = Number(secondInput);
+    console.log(calculation);
 }
