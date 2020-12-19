@@ -26,8 +26,14 @@ function getAnswer() {
         type: 'GET'
     }).then(function (response) {
         console.log(response);
-                
+        postAnswer(response);     
     })
+}
+
+function postAnswer(response) {
+    let result = $('#answer');
+    result.empty();
+    result.append(response)
 }
 
 function runCalculation() {
@@ -80,4 +86,5 @@ function submit() {
 
     runCalculation();
     getAnswer();
+    
 }
