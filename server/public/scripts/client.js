@@ -5,7 +5,7 @@ $(readyNow);
 function readyNow() {
     console.log('jQuery ready.');
 
-    
+
     $('#addition').on('click', add);
     $('#subtraction').on('click', subtract);
     $('#multiply').on('click', multiply);
@@ -19,7 +19,29 @@ let calculation = {
     operator: 0
 }
 
-console.log(calculation);
+function getAnswer() {
+    console.log('getting answer');
+    $.ajax({
+        url: '/calculate',
+        type: 'GET'
+    }).then(function (response) {
+        console.log(response);
+                
+    })
+}
+
+function runCalculation() {
+    console.log('calculating...');
+    $.ajax({
+        url: '/calculate',
+        type: 'POST',
+        data: calculation
+    }).then(function (response) {
+        console.log(response);
+        
+    })
+}
+
 
 
 //----- Operator selection --------------
@@ -27,10 +49,9 @@ function add() {
     console.log('Add');
     calculation.operator = '+'
     console.log(calculation);
-    
 }
 function subtract() {
-    console.log('subtract');    
+    console.log('subtract');
     calculation.operator = '-'
     console.log(calculation);
 }
@@ -56,4 +77,7 @@ function submit() {
     let secondInput = $('#input2').val();
     calculation.secondNumber = Number(secondInput);
     console.log(calculation);
+
+    runCalculation();
+    getAnswer();
 }
