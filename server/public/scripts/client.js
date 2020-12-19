@@ -11,7 +11,12 @@ function readyNow() {
     $('#multiply').on('click', multiply);
     $('#divide').on('click', divide);
     $('#submit').on('click', submit);
+    $('#clear').on('click', clear);
+
+    getAnswer();
 }
+
+let prevCalc = [];
 
 let calculation = {
     firstNumber: 0,
@@ -34,9 +39,8 @@ function getAnswer() {
 function postAnswer(response) {
     let result = $('#answer');
     result.empty();
-    let i = response.length - 1;
-    result.append(response[i].answer)
-    
+    result.append(response[response.length - 1].answer)
+    prevCalculations(response);
 }
 
 function runCalculation() {
@@ -51,6 +55,17 @@ function runCalculation() {
     })
 }
 
+function prevCalculations(array) {
+    let oldCalc = $('#oldInputs');
+    oldCalc.empty();
+    for (object of array) {
+        oldCalc.append(`
+        <li>${object.firstNumber} 
+        ${object.operator} 
+        ${object.secondNumber} 
+        = ${object.answer} </li>`)
+    }
+}
 
 
 //----- Operator selection --------------
@@ -77,17 +92,21 @@ function divide() {
 
 //----- End Operator selection -----------
 
-
-
 function submit() {
     console.log('submit');
     let firstInput = $('#input1').val();
-    calculation.firstNumber = Number(firstInput);
     let secondInput = $('#input2').val();
+    calculation.firstNumber = Number(firstInput);
     calculation.secondNumber = Number(secondInput);
     console.log(calculation);
 
     runCalculation();
     getAnswer();
     
+}
+
+
+
+function clear(params) {
+    console.log('History cleared.');
 }

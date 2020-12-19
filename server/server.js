@@ -51,31 +51,27 @@ app.post('/calculate', (req, res) => {
 
 
 function add(num1, num2) {
-    // answer = [];
     sum = Number(num1) + Number(num2)
     problem.answer = sum
     console.log(problem);
 
 }
 function subtract(num1, num2) {
-    // answer = [];
     sum = Number(num1) - Number(num2)
-    answer.push(sum);
-    console.log(answer);
+    problem.answer = sum
+    console.log(problem);
 
 }
 function multiply(num1, num2) {
-    // answer = [];
     sum = Number(num1) * Number(num2)
-    answer.push(sum);
-    console.log(answer);
+    problem.answer = sum
+    console.log(problem);
 
 }
 function divide(num1, num2) {
-    // answer = [];
     sum = Number(num1) / Number(num2)
-    answer.push(sum);
-    console.log(answer);
+    problem.answer = sum
+    console.log(problem);
 
 }
 
