@@ -16,7 +16,8 @@ function readyNow() {
 let calculation = {
     firstNumber: 0,
     secondNumber: 0,
-    operator: 0
+    operator: 0,
+    answer: 0
 }
 
 function getAnswer() {
@@ -33,7 +34,9 @@ function getAnswer() {
 function postAnswer(response) {
     let result = $('#answer');
     result.empty();
-    result.append(response)
+    let i = response.length - 1;
+    result.append(response[i].answer)
+    
 }
 
 function runCalculation() {

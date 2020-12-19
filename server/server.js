@@ -16,12 +16,25 @@ app.get('/calculate', (req, res) => {
 
 })
 
-let problem = {};
+let problem = {
+    firstNumber: 0,
+    secondNumber: 0,
+    operator: 0,
+    answer: 0
+};
+
+// let answer = {
+//     firstNumber: 0,
+//     secondNumber: 0,
+//     operator: 0,
+//     answer: 0
+// };
 
 app.post('/calculate', (req, res) => {
 
     problem = req.body;
     console.log(problem);
+    answer.push(problem);
     if (problem.operator === '+') {
         add(problem.firstNumber, problem.secondNumber);
     } else if (problem.operator === '-') {
@@ -38,28 +51,28 @@ app.post('/calculate', (req, res) => {
 
 
 function add(num1, num2) {
-    answer = [];
+    // answer = [];
     sum = Number(num1) + Number(num2)
-    answer.push(sum);
-    console.log(answer);
+    problem.answer = sum
+    console.log(problem);
 
 }
 function subtract(num1, num2) {
-    answer = [];
+    // answer = [];
     sum = Number(num1) - Number(num2)
     answer.push(sum);
     console.log(answer);
 
 }
 function multiply(num1, num2) {
-    answer = [];
+    // answer = [];
     sum = Number(num1) * Number(num2)
     answer.push(sum);
     console.log(answer);
 
 }
 function divide(num1, num2) {
-    answer = [];
+    // answer = [];
     sum = Number(num1) / Number(num2)
     answer.push(sum);
     console.log(answer);
