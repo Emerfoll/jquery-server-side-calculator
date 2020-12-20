@@ -32,7 +32,7 @@ function getAnswer() {
         type: 'GET'
     }).then(function (response) {
         console.log(response);
-        postAnswer(response);     
+        postAnswer(response);
     })
 }
 
@@ -51,7 +51,7 @@ function runCalculation() {
         data: calculation
     }).then(function (response) {
         console.log(response);
-        
+
     })
 }
 
@@ -102,11 +102,19 @@ function submit() {
 
     runCalculation();
     getAnswer();
-    
+
 }
 
 
 
-function clear(params) {
+function clear() {
     console.log('History cleared.');
+
+    $.ajax({
+        url: '/clear',
+        type: 'GET'
+    }).then(function (response) {
+        console.log(response);
+        prevCalculations(response);
+    })
 }

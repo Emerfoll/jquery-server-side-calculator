@@ -76,6 +76,13 @@ function divide(num1, num2) {
 }
 
 
+app.get('/clear', (req, res) => {
+    answer = [];
+    console.log('Clearing history');
+    res.send(answer);
+
+})
+
 
 
 app.listen(PORT, () => {
