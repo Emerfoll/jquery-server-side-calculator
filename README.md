@@ -1,9 +1,9 @@
 # Project Name
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+Server-side Calculator
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is a project to build a user interface that communicates with a server to run calculations based on the user input.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+The user inputs 2 numbers and selects an operator. When the submit button is pressed, it sends the selected operator along with the numbers input over to the server. The server then runs the selected calculation based on the operator sent, updates the answer to the calculation, then stores the calculation into the history with the other past calculations. The information is then sent back to the client side and updates the DOM with the answer.
